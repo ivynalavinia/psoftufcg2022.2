@@ -6,15 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ProdutoAlterarImplService implements ProdutoAlterarService {
+public class ProdutoValidarCodigoDeBarraImplService implements ProdutoValidarCodigoDeBarraService {
 
     @Autowired
     ProdutoRepository<Produto, Long> produtoRepository;
+
     @Override
-    public Produto alterar (Produto produtoAlterado) {
-        if (produtoAlterado.getPreco() <= 0) {
-            throw new RuntimeException("Preco invalido");
-        }
-        return produtoRepository.update(produtoAlterado);
+    public boolean validar (Produto produtoAlterado) {
+        // todo
+        return true;
     }
 }
