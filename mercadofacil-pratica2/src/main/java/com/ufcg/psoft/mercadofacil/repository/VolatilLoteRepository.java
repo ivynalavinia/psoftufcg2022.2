@@ -1,9 +1,11 @@
 package com.ufcg.psoft.mercadofacil.repository;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.ufcg.psoft.mercadofacil.model.Lote;
+import java.util.ArrayList;
+import java.util.List;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class VolatilLoteRepository implements LoteRepository<Lote, Long> {
 
    List<Lote> lotes = new ArrayList<>();
@@ -13,7 +15,7 @@ public class VolatilLoteRepository implements LoteRepository<Lote, Long> {
        lotes.add(lote);
        return lotes.stream().findFirst().get();
    }
-   
+
    @Override
    public Lote find(Long id) {
       return lotes.get(Integer.parseInt("" + id));
